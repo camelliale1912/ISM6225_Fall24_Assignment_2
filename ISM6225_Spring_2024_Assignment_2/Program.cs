@@ -329,6 +329,12 @@ namespace ISM6225_Spring_2024_Assignment_2
         {
             try
             {
+                // Enforce the constraint: 0 <= n <= 30
+                if (n < 0 || n > 30)
+                {
+                throw new ArgumentOutOfRangeException(nameof(n), "Input must be between 0 and 30 inclusive.");
+                }
+
                 // Base cases: if n is 0 or 1, return the corresponding Fibonacci number
                 if (n == 0) return 0;
                 if (n == 1) return 1;
